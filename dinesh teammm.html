@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner - Telangana Syllabus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        #studyPlan {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e3f2fd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>AI Study Planner</h2>
+        <label for="class">Select Your Class:</label>
+        <select id="class">
+            <option value="6">Class 6</option>
+            <option value="7">Class 7</option>
+            <option value="8">Class 8</option>
+            <option value="9">Class 9</option>
+            <option value="10">Class 10</option>
+        </select>
+        
+        <label for="subject">Select Subject:</label>
+        <select id="subject">
+            <option value="Maths">Maths</option>
+            <option value="Science">Science</option>
+            <option value="Social">Social</option>
+            <option value="English">English</option>
+            <option value="Telugu">Telugu</option>
+        </select>
+        
+        <button onclick="generatePlan()">Generate Study Plan</button>
+        
+        <div id="studyPlan"></div>
+    </div>
+
+    <script>
+        function generatePlan() {
+            const studentClass = document.getElementById('class').value;
+            const subject = document.getElementById('subject').value;
+            let studyPlan = `AI-generated study plan for Class ${studentClass} - ${subject}:<br><br>`;
+            
+            switch(subject) {
+                case 'Maths':
+                    studyPlan += "- Revise formulas daily.<br>- Solve 5 problems from each topic.<br>- Practice previous year questions.";
+                    break;
+                case 'Science':
+                    studyPlan += "- Read concepts and make notes.<br>- Perform small experiments.<br>- Revise key points before tests.";
+                    break;
+                case 'Social':
+                    studyPlan += "- Learn important dates and events.<br>- Make summary notes.<br>- Practice map-related questions.";
+                    break;
+                case 'English':
+                    studyPlan += "- Read one chapter daily.<br>- Learn 5 new words each day.<br>- Practice grammar exercises.";
+                    break;
+                case 'Telugu':
+                    studyPlan += "- Read and summarize stories.<br>- Learn new vocabulary.<br>- Practice writing essays.";
+                    break;
+            }
+            
+            document.getElementById('studyPlan').innerHTML = studyPlan;
+        }
+    </script>
+</body>
+</html>
